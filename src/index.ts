@@ -1,2 +1,5 @@
-import { activities } from "./data/activities";
-console.log(JSON.stringify(activities));
+import {activities} from './data'
+import dbg from 'debug';
+const debug = dbg('src:index');
+debug('init')
+debug('activities', activities)

@@ -4,13 +4,23 @@
   "description": "Experimental project setup for node and typescript configuration",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json",
+    "dev": "nodemon --exec \"DEBUG=* ts-node-cwd src/index.ts\"",
+    "start": "npm run build && node build/index.js",
+    "util": "DEBUG=* ts-node-cwd utils/index.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/debug": "^4.1.8",
     "@types/node": "^20.4.0",
+    "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
   }
 }
